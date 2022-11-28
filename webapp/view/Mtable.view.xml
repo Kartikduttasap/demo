@@ -1,0 +1,97 @@
+<mvc:View controllerName="ns.demo.controller.Mtable" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Shell>
+        <app>
+            <Page title="SAP M Table" showNavButton="true" navButtonPress="onBack">
+                <content>
+                    <Table id="idTable" items="{/fruits}" selectionChange="onItem" alternateRowColors="true" mode="SingleSelectMaster">
+                        <headerToolbar>
+                            <Toolbar>
+                                <content>
+                                    <Button text="Read Row" press="onReadRow" width="10%" />
+                                    <Button text="Update Row" press="onUpdateRow" width="10%" />
+                                    <Button text="Append Row" press="onAppend" width="10%" />
+                                    <Button text="Insert Row" press="onInsert" width="10%" />
+                                    <Button text="Delete Row" press="onDelete" width="10%" />
+                                    <Button text="Add Column" press="onAddColumn" width="10%" />
+                                    <Button text="Delete Column" press="onDeleteColumn" width="10%" />
+                                    <!-- <Button text="Editable" press="onChange" width="10%" /> -->
+                                    <Button text="Change Property" press="onChangeProperty" />
+                                    <!-- <Button text="Binding Context" press="onBindContext" /> -->
+                                </content>
+                            </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <header>
+                                    <Text text="Image" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Text text="Name" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Text text="Type" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Text text="Price" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Text text="Currency" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Text text="Status" />
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem id="idColumnListItem">
+                                <cells>
+                                    <Image src="{imageURL}" height="20px" width="20px" />
+                                    <Text text="{name}" />
+                                    <Text text="{type}" />
+                                    <Text text="{price}" />
+                                    <Text text="{currency}" />
+                                    <!-- <Text text="{status}" /> -->
+                                    <ObjectStatus text="{status}" state="{path:'status', formatter:'.formatter.statusFormat'}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                    <f:SimpleForm id="idForm" title="Selected Row" layout="ColumnLayout">
+                        <f:content>
+                            <Label text="Image" />
+                            <Image src="{imageURL}" height="20px" width="20px" />
+                            <Label text="Name" />
+                            <Input value="{name}" />
+                            <Label text="Type" />
+                            <Input value="{type}" />
+                            <Label text="Price" />
+                            <Input value="{price}" />
+                            <Label text="Currency" />
+                            <Input value="{currency}" />
+                            <Label text="Status" />
+                            <Select name="{status}" selectedKey="{status}">
+                                <items>
+                                    <c:ListItem key=" " text="" icon="" />
+                                    <c:ListItem key="Available" text="Available" icon="" />
+                                    <c:ListItem key="Unavailable" text="Unavailable" icon="" />
+                                    <c:ListItem key="Discontinued" text="Discontinued" icon="" />
+                                    <c:ListItem key="Out of Stock" text="Out of Stock" icon="" />
+                                </items>
+                            </Select>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Page>
+        </app>
+    </Shell>
+</mvc:View>

@@ -1,0 +1,19 @@
+<mvc:View controllerName="ns.demo.controller.Message" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Shell>
+        <app>
+            <Page showNavButton="true" navButtonPress="onBack" title="Messages">
+                <content>
+                    <MessageStrip text="Success with default icon and close button:" type="Success" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom" />
+                    <Button id="mVBtn" text="Messages View" class="sapUiLargeMarginTop sapUiSmallMarginBegin" press="handlePopoverPress" ariaHasPopup="Dialog" />
+                    <Button text="Messages Toast" class="sapUiLargeMarginTop sapUiSmallMarginBegin" press="onMessageToast" />
+                    <Button text="Messages Box" class="sapUiLargeMarginTop sapUiSmallMarginBegin" press="onMessageBox" />
+                </content>
+                <customHeader />
+                <footer />
+                <headerContent />
+                <landmarkInfo />
+                <subHeader />
+            </Page>
+        </app>
+    </Shell>
+</mvc:View>

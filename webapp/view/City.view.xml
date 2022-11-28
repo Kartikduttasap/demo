@@ -1,0 +1,36 @@
+<mvc:View controllerName="ns.demo.controller.City" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Page title="Cities">
+        <content>
+            <Table items="{/cities}">
+                <columns>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="Famous For" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="Type" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="Other Name" />
+                    </Column>
+                </columns>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{name}" />
+                        <Text text="{famousFor}" />
+                        <Text text="{type}" />
+                        <Text text="{otherName}" />
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

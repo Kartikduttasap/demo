@@ -1,0 +1,66 @@
+<mvc:View controllerName="ns.demo.controller.Overview" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Shell>
+        <app>
+            <Page title="SAP UI5 Overview">
+                <content>
+                    <Toolbar class="sapUiLargeMarginBeginEnd" height="10%">
+                        <content>
+                            <Button text="UI Elements" class="sapUiLargeMarginBeginEnd" width="15%" press="onUIElements" type="Success" />
+                            <Button text="List" class="sapUiLargeMarginBeginEnd" width="15%" press="onList" type="Success" />
+                            <Button text="sap.m.table" class="sapUiLargeMarginBeginEnd" width="15%" press="onMtable" type="Success" />
+                            <Button text="sap.ui.table" class="sapUiLargeMarginBeginEnd" width="15%" press="onUItable" type="Emphasized" />
+                        </content>
+                    </Toolbar>
+                    <Toolbar class="sapUiLargeMarginBeginEnd" height="10%">
+                        <content>
+                            <Button text="CRUD" class="sapUiLargeMarginBeginEnd" width="15%" type="Emphasized" press="onCRUD" />
+                            <Button text="Smart Form" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Adobe Form" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Master Detail" class="sapUiLargeMarginBeginEnd" width="15%" press="onMasterDet" type="Success" />
+                        </content>
+                    </Toolbar>
+                    <Toolbar class="sapUiLargeMarginBeginEnd" height="10%">
+                        <content>
+                            <Button text="Fragments" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Layout" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Formatter" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Theme Designer" class="sapUiLargeMarginBeginEnd" width="15%" />
+                        </content>
+                    </Toolbar>
+                    <Toolbar class="sapUiLargeMarginBeginEnd" height="10%">
+                        <content>
+                            <Button text="Upload /  Download" class="sapUiLargeMarginBeginEnd" width="15%" type="Emphasized" press="onUpload" />
+                            <Button text="Charts" class="sapUiLargeMarginBeginEnd" width="15%" type="Emphasized" press="onChart" />
+                            <Button text="Maps" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Messages" class="sapUiLargeMarginBeginEnd" width="15%" type="Emphasized" press="onMessage" />
+                        </content>
+                    </Toolbar>
+                    <Toolbar class="sapUiLargeMarginBeginEnd" height="10%">
+                        <content>
+                            <Button text="Call Custom App" class="sapUiLargeMarginBeginEnd" width="15%" type="Emphasized" />
+                            <Button text="Call Standard App" class="sapUiLargeMarginBeginEnd" width="15%" press="onCallStdApp" />
+                            <Button text="Call ECC Tcode" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Notification" class="sapUiLargeMarginBeginEnd" width="15%" />
+                        </content>
+                    </Toolbar>
+                    <Toolbar class="sapUiLargeMarginBeginEnd" height="10%">
+                        <content>
+                            <Button text="Simple Form" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Smart Table" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Smart Controls" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Messages" class="sapUiLargeMarginBeginEnd" width="15%" />
+                        </content>
+                    </Toolbar>
+                    <Toolbar class="sapUiLargeMarginBeginEnd" height="10%">
+                        <content>
+                            <Button text="Tree Table" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Tile" class="sapUiLargeMarginBeginEnd" width="15%" />
+                            <Button text="Barcode" class="sapUiLargeMarginBeginEnd" width="15%" type="Emphasized" press="onBarcode" />
+                            <Button text="Calender" class="sapUiLargeMarginBeginEnd" width="15%" />
+                        </content>
+                    </Toolbar>
+                </content>
+            </Page>
+        </app>
+    </Shell>
+</mvc:View>

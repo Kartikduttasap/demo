@@ -1,0 +1,38 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core">
+    <Dialog id="openDialog" title="Fragment Popup">
+        <Table id="idTable" items="{/cities}" mode="SingleSelectMaster" selectionChange="onSelect">
+            <columns>
+                <Column>
+                    <Text text="Name" />
+                </Column>
+            </columns>
+            <columns>
+                <Column>
+                    <Text text="Famous For" />
+                </Column>
+            </columns>
+            <columns>
+                <Column>
+                    <Text text="Type" />
+                </Column>
+            </columns>
+            <columns>
+                <Column>
+                    <Text text="Other Name" />
+                </Column>
+            </columns>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{name}" />
+                    <Text text="{famousFor}" />
+                    <Text text="{type}" />
+                    <Text text="{otherName}" />
+                </cells>
+            </ColumnListItem>
+        </Table>
+        <Button text="Select" press="selectDialog" />
+        <Button text="Close" press="closeDialog" />
+    </Dialog>
+
+    <!-- <Button text="Ok" press=".closeDialog" /> -->
+</c:FragmentDefinition>

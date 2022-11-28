@@ -1,0 +1,20 @@
+<mvc:View controllerName="ns.demo.controller.Master" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Page title="Fruits List">
+        <content>
+            <List items="{/fruits}">
+                <!-- <DisplayListItem label="{name}" value="{price}" /> -->
+                <ObjectListItem number="{price}" type="Active" press="onSelect" numberUnit="{currency}" title="{name}" numberState="{= ${price} > 150 ? 'Error' : 'Success'}">
+                    <firstStatus>
+                        <ObjectStatus text="{status}" state="{path:'status', formatter:'.formatter.statusFormat'}" />
+                    </firstStatus>
+                    <!-- <markers>
+                                <ObjectMarker type="Favorite" visibility="IconOnly" />
+                            </markers> -->
+                    <!-- <secondStatus>
+                                <ObjectStatus text="{healthBenefit}" title="Benefit" />
+                            </secondStatus> -->
+                </ObjectListItem>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

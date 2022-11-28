@@ -1,0 +1,48 @@
+<mvc:View controllerName="ns.demo.controller.Supplier" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Page title="Suppliers">
+        <content>
+            <Table items="{/suppliers}">
+                <columns>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="Contact" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="No" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="City" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="Latidude" />
+                    </Column>
+                </columns>
+                <columns>
+                    <Column>
+                        <Text text="Longitude" />
+                    </Column>
+                </columns>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{name}" />
+                        <Text text="{contactPerson}" />
+                        <Text text="{contactNo}" />
+                        <Input value="{city}" showValueHelp="true" valueHelpRequest="onHelp" />
+                        <Text text="{latidude}" />
+                        <Text text="{longitude}" />
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

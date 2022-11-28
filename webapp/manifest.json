@@ -1,0 +1,295 @@
+{
+  "_version": "1.33.0",
+  "sap.app": {
+    "id": "ns.demo",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.7.6",
+      "toolsId": "ee7a69a1-b747-4357-a112-3c258c1b6afe"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZKD_SALES_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "mockDataService": {
+        "uri": "./model/mockdata.json",
+        "type": "JSON",
+        "settings": {
+
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.90.7",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ns.demo.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mockDataService",
+        "preload": true,
+        "settings": {}
+      },
+      "sales": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "ns.demo.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": true
+      },
+      "routes": [
+        {
+          "name": "RouteMain",
+          "pattern": ":?query:",
+          "target": [
+            "TargetMain"
+          ]
+        },
+        {
+          "name": "RouteUI",
+          "pattern": "UI",
+          "target": [
+            "TargetUI"
+          ]
+        },
+        {
+          "name": "RouteList",
+          "pattern": "List",
+          "target": [
+            "TargetList"
+          ]
+        },
+        {
+          "name": "RouteMtable",
+          "pattern": "Mtable",
+          "target": [
+            "TargetMtable"
+          ]
+        },
+        {
+          "name": "RouteUItable",
+          "pattern": "UItable",
+          "target": [
+            "TargetUItable"
+          ]
+        },
+        {
+          "name": "RouteDetail",
+          "pattern": "Detail",
+          "target": [
+            "TargetMaster",
+            "TargetDetail"
+          ]
+        },
+        {
+          "name": "RouteMD",
+          "pattern": "MasterDetail",
+          "target": [
+            "TargetMD"
+          ]
+        },
+        {
+          "name": "RouteMessage",
+          "pattern": "Message",
+          "target": [
+            "TargetMessage"
+          ]
+        },
+        {
+          "name": "RouteUpload",
+          "pattern": "Upload",
+          "target": [
+            "TargetUpload"
+          ]
+        },
+        {
+          "name": "RouteBarcode",
+          "pattern": "Barcode",
+          "target": [
+            "TargetBarcode"
+          ]
+        },
+        {
+          "name": "RouteChart",
+          "pattern": "Chart",
+          "target": [
+            "TargetChart"
+          ]
+        },
+        {
+          "name": "RouteCRUD",
+          "pattern": "CRUD",
+          "target": [
+            "TargetCRUD"
+          ]
+        }                 
+      ],
+      "targets": {
+        "TargetMain": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,
+          "viewId": "Overview",
+          "viewName": "Overview"
+        },
+        "TargetUI": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,
+          "viewId": "idUI",
+          "viewName": "UI"
+        },
+        "TargetList": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,
+          "viewId": "idList",
+          "viewName": "List"
+        },
+        "TargetMtable": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,
+          "viewId": "idMtable",
+          "viewName": "Mtable"
+        },
+        "TargetUItable": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,
+          "viewId": "idUItable",
+          "viewName": "UItable"
+        },
+        "TargetMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,                  
+          "viewId": "idMaster",
+          "viewName": "Master"
+        },
+        "TargetDetail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,         
+          "viewId": "idDetail",
+          "viewName": "Detail"
+        },
+        "TargetMD": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,          
+          "viewId": "idMD",
+          "viewName": "MD"
+        },
+        "TargetMessage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,          
+          "viewId": "idMessage",
+          "viewName": "Message"
+        },
+        "TargetUpload": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,          
+          "viewId": "idUpload",
+          "viewName": "Upload"
+        },
+        "TargetBarcode": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,          
+          "viewId": "idBarcode",
+          "viewName": "Barcode"
+        },
+        "TargetChart": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,          
+          "viewId": "idChart",
+          "viewName": "Chart"
+        },
+        "TargetCRUD": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": true,          
+          "viewId": "idCRUD",
+          "viewName": "crud"
+        }            
+      }
+    },
+    "rootView": {
+      "viewName": "ns.demo.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

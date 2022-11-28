@@ -1,0 +1,32 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core">
+    <Table id="idTable" items="{/cities}" mode="SingleSelectMaster" selectionChange="onSelect">
+        <columns>
+            <Column>
+                <Text text="Name" />
+            </Column>
+        </columns>
+        <columns>
+            <Column>
+                <Text text="Famous For" />
+            </Column>
+        </columns>
+        <columns>
+            <Column>
+                <Text text="Type" />
+            </Column>
+        </columns>
+        <columns>
+            <Column>
+                <Text text="Other Name" />
+            </Column>
+        </columns>
+        <ColumnListItem>
+            <cells>
+                <Text text="{name}" />
+                <Text text="{famousFor}" />
+                <Text text="{type}" />
+                <Text text="{otherName}" />
+            </cells>
+        </ColumnListItem>
+    </Table>
+</c:FragmentDefinition>

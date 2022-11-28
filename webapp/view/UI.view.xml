@@ -1,0 +1,79 @@
+<mvc:View controllerName="ns.demo.controller.UI" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Shell>
+        <app>
+            <Page title="UI Elements" navButtonPress="onBack" showNavButton="true">
+                <content>
+                    <Panel headerText="Binding">
+                        <content>
+                            <f:SimpleForm>
+                                <f:content>
+                                    <Label text="Static" />
+                                    <Input id="idStaInput" value="{name}" binding="{/fruits/0/}" width="20%" editable="false" />
+                                    <Label text="Dynamic" />
+                                    <Input id="idDynInput" width="20%" />
+                                </f:content>
+                                <f:toolbar>
+                                    <Toolbar>
+                                        <content>
+                                            <Button text="Set Value" press="onSetValue" width="33%" />
+                                            <Button text="Bind Value Binding" press="onBindValue" width="33%" />
+                                            <Button text="Bind Context" press="onBindContext" width="33%" />
+                                        </content>
+                                    </Toolbar>
+                                </f:toolbar>
+                            </f:SimpleForm>
+                        </content>
+                    </Panel>
+                    <Panel headerText="Drop Down">
+                        <content>
+                            <f:SimpleForm>
+                                <f:content>
+                                    <Label text="Static" />
+                                    <Select items="{/fruits}" width="33%" showSecondaryValues="true">
+                                        <items>
+                                            <c:ListItem key="{name}" text="{name}" additionalText="{color}" />
+                                        </items>
+                                    </Select>
+                                    <Label text="Combo Box" />
+                                    <ComboBox items="{/fruits}" width="33%">
+                                        <items>
+                                            <c:ListItem key="{name}" text="{name}" />
+                                        </items>
+                                    </ComboBox>
+                                    <Label text="Input With Suggestions" />
+                                    <Input showSuggestion="true" suggestionItems="{/fruits}" width="33%">
+                                        <suggestionItems>
+                                            <c:Item key="{name}" text="{name}" />
+                                        </suggestionItems>
+                                    </Input>
+                                </f:content>
+                            </f:SimpleForm>
+                        </content>
+                    </Panel>
+                    <Panel headerText="Dynamic UI" id="idPanel">
+                        <content>
+                            <f:SimpleForm>
+                                <f:content />
+                                <f:toolbar>
+                                    <Toolbar>
+                                        <content>
+                                            <Button text="Dynamic Text" press="onDynText" width="33%" />
+                                            <Button text="Dynamic Radio Button" press="onDynRadBut" width="33%" />
+                                            <Button text="Dynamic Checkbox" press="onDynCheckbox" width="33%" />
+                                        </content>
+                                    </Toolbar>
+                                </f:toolbar>
+                            </f:SimpleForm>
+                        </content>
+                    </Panel>
+                    <Panel headerText="Popup">
+                        <content />
+                    </Panel>
+                    <Panel headerText="Date and Time">
+                        <content />
+                    </Panel>
+                </content>
+            </Page>
+        </app>
+    </Shell>
+</mvc:View>

@@ -1,0 +1,23 @@
+<mvc:View id="detail" controllerName="ns.demo.controller.Detail" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Page title="Selected Fruit" showNavButton="true" navButtonPress="showHeader">
+        <content>
+            <VBox height="130px">
+                <ObjectHeader id="idHeader" intro="{status}" introActive="true" number="{price}" numberUnit="{currency}" title="{name}" numberState="{= ${price} > 150 ? 'Error' : 'Success'}" />
+            </VBox>
+            <IconTabBar id="idIconTabBar" select=".onFilterSelect" class="sapUiResponsiveContentPadding" stretchContentHeight="false">
+                <items>
+                    <IconTabFilter icon="sap-icon://begin" iconColor="Positive" count="10" text="Suppliers" key="Suppliers">
+                        <content>
+                            <mvc:XMLView viewName="ns.demo.view.Supplier" />
+                        </content>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://compare" iconColor="Critical" count="20" text="Cities" key="Cities">
+                        <content>
+                            <c:Fragment fragmentName="ns.demo.fragments.City" type="XML" />
+                        </content>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,157 @@
+<mvc:View controllerName="ns.demo.controller.crud" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Shell>
+        <app>
+            <Page title="CRUD" showNavButton="true" navButtonPress="onCRUD">
+                <content>
+                    <Table id="headerTab" items="{sales>/}" mode="SingleSelectMaster">
+                        <items>
+                            <ColumnListItem id="__item0">
+                                <cells>
+                                    <Text text="{sales>Vbeln}" />
+                                    <Text text="{sales>Vkorg}" />
+                                    <Text text="{sales>Vtweg}" />
+                                    <Text text="{sales>Auart}" />
+                                    <Text text="{sales>Spart}" />
+                                    <Text text="{sales>Augru}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                        <columns>
+                            <Column id="__column0">
+                                <header>
+                                    <Label text="Sales Document" id="__label0" />
+                                </header>
+                            </Column>
+                            <Column id="__column1">
+                                <header>
+                                    <Label text="Sales Org." id="__label1" />
+                                </header>
+                            </Column>
+                            <Column id="__column2">
+                                <header>
+                                    <Label text="Distr. Channel" id="__label2" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Sales Doc. Type" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Division" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Order reason" />
+                                </header>
+                            </Column>
+                        </columns>
+                        <headerToolbar>
+                            <Toolbar width="100%" id="__toolbar1">
+                                <content>
+                                    <Button text="Get Sales" width="230px" icon="sap-icon://accounting-document-verification" press="onGetData" type="Emphasized" />
+                                    <Button text="Get Header" width="230px" icon="sap-icon://account" press="onGetHeader" type="Emphasized" />
+                                    <Button text="Get Status" width="230px" icon="sap-icon://account" press="onGetStatus" type="Emphasized" />
+                                    <Button text="Get Header and Detail" width="230px" icon="sap-icon://accounting-document-verification" press="onGetDetail" type="Emphasized" />
+                                    <Button text="Get All" width="230px" icon="sap-icon://account" press="onGetHeader" type="Emphasized" />
+                                </content>
+                            </Toolbar>
+                        </headerToolbar>
+                    </Table>
+                    <Table id="ItemTab" items="{items>/root/results}" mode="SingleSelectMaster">
+                        <headerToolbar>
+                            <Toolbar width="100%">
+                                <content>
+                                    <Button text="Create Header" width="230px" icon="sap-icon://add-contact" press="onCreateHeader" type="Emphasized" />
+                                    <Button text="Create Item" width="230px" icon="sap-icon://add-activity" press="onCreateOrder" type="Emphasized" />
+                                    <Button text="Create Order" width="230px" icon="sap-icon://add-activity" press="onCreateOrder" type="Emphasized" />
+                                    <Button text="Deep Entity" width="230px" icon="sap-icon://add-activity" press="onCreateOrder" type="Emphasized" />
+                                    <Button text="Create Multiple" width="230px" icon="sap-icon://add-activity-2" press="onCreateMultiple" type="Emphasized" />
+                                </content>
+                            </Toolbar>
+                        </headerToolbar>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{items>Vbeln}" />
+                                    <Text text="{items>Posnr}" />
+                                    <Text text="{items>Matnr}" />
+                                    <Text text="{items>Charg}" />
+                                    <Text text="{items>Matkl}" />
+                                    <Text text="{items>Arktx}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                        <columns>
+                            <Column>
+                                <header>
+                                    <Label text="Sales Document" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Item No" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Material" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Batch" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Material Group" />
+                                </header>
+                            </Column>
+                            <Column>
+                                <header>
+                                    <Label text="Description" />
+                                </header>
+                            </Column>
+                        </columns>
+                    </Table>
+                    <HBox>
+                        <sap.ui.layout.form:SimpleForm id="idHeader" width="100%" xmlns:sap.ui.layout.form="sap.ui.layout.form" layout="ResponsiveGridLayout" class="sapUiLargeMarginBegin">
+                            <sap.ui.layout.form:content>
+                                <c:Title text="Header" />
+                                <Label text="Sales Document" />
+                                <Input value="{header>/root/Vbeln}" />
+                                <Label text="Sales Org." />
+                                <Input value="{header>/root/Vkorg}" />
+                                <Label text="Distr. Channel" />
+                                <Input value="{header>/root/Vtweg}" />
+                                <Label text="Sales Doc. Type" />
+                                <Input value="{header>/root/Auart}" />
+                                <Label text="Division" />
+                                <Input value="{header>/root/Spart}" />
+                            </sap.ui.layout.form:content>
+                        </sap.ui.layout.form:SimpleForm>
+
+                        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" layout="ResponsiveGridLayout" class="sapUiLargeMarginBegin">
+                            <sap.ui.layout.form:content>
+                                <c:Title text="Status" />
+                                <Label text="Sales Document" />
+                                <Input value="{status>/root/Vbeln}" />
+                                <Label text="Sales Doc. Type" />
+                                <Input value="{status>/root/Auart}" />
+                                <Label text="Doc. Currency" />
+                                <Input value="{status>/root/Waerk}" />
+                                <Label text="Sales Org." />
+                                <Input value="{status>/root/Vkorg}" />
+                                <Label text="Sales Office" />
+                                <Input value="{status>/root/Vkbur}" />
+                            </sap.ui.layout.form:content>
+                        </sap.ui.layout.form:SimpleForm>
+                    </HBox>
+                </content>
+            </Page>
+        </app>
+    </Shell>
+</mvc:View>

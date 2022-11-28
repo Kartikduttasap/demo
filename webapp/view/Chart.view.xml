@@ -1,0 +1,18 @@
+<mvc:View controllerName="ns.demo.controller.Chart" xmlns:viz="sap.viz.ui5.controls" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Shell>
+        <app>
+            <Page title="Charts" showNavButton="true" navButtonPress="onBack">
+                <content>
+                    <Label text="Chart Type" class="sapUiLargeMarginBegin sapUiLargeMarginTop" />
+                    <Select id="idChartType" name="Chart Type" items="{/chartType}" change="onChange" class="sapUiLargeMarginBegin sapUiLargeMarginTop">
+                        <items>
+                            <c:ListItem key="{type}" text="{type}" />
+                        </items>
+                    </Select>
+                    <!-- <Button text="Submit" /> -->
+                    <viz:VizFrame id="idViz" width="100%" vizType="bar" />
+                </content>
+            </Page>
+        </app>
+    </Shell>
+</mvc:View>

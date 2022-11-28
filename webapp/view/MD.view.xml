@@ -1,0 +1,18 @@
+<mvc:View controllerName="ns.demo.controller.MD" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <SplitApp id="mdapp">
+        <masterPages>
+            <Page title="Master">
+                <content>
+                    <mvc:XMLView viewName="ns.demo.view.Master" />
+                </content>
+            </Page>
+        </masterPages>
+        <detailPages>
+            <Page title="Detail" showNavButton="true" navButtonPress="onBack">
+                <content>
+                    <mvc:XMLView viewName="ns.demo.view.Detail" />
+                </content>
+            </Page>
+        </detailPages>
+    </SplitApp>
+</mvc:View>

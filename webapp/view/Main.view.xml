@@ -1,0 +1,129 @@
+<mvc:View controllerName="ns.demo.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="idTable" items="{/header}" growing="true" alternateRowColors="true" mode="SingleSelectMaster" delete="onDelete">
+                <headerToolbar>
+                    <Toolbar>
+                        <content>
+                            <Button text="Add" press="onAdd" />
+                            <Button text="Delete" press="onDelete" />
+                            <Button text="Change" press="onChange" />
+                            <Button text="Show Sales Org" press="onSalesOrg" />
+                            <Button text="Navigate" press="onNav" />
+                            <Button text="Get Drop Down" press="onDrpDwn" />
+                            <Button text="Binding" press="onBind" />
+                            <Button text="Binding Context" press="onBindContext" />
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <header>
+                            <Text text="Type" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Text text="Order" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Text text="Delete" />
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="idColumnListItem">
+                        <cells>
+                            <Text text="{Auart}" />
+                            <Input value="{Vbeln}">
+                                <suggestionColumns />
+                                <suggestionItems />
+                                <suggestionRows />
+                            </Input>
+                            <Button id="idDelete" text="Delete" icon="sap-icon://delete" press="onKunnr" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Input id="idInput" tooltip="Input Tooltip" value="{Vbeln}">
+                <!-- <suggestionItems>
+                    <core:Item key="{Vbeln}" text="{Auart}" />
+                </suggestionItems> -->
+            </Input>
+            <Input id="idInput1" tooltip="Input Tooltip" value="{Vbeln}">
+                <!-- <suggestionItems>
+                    <core:Item key="{Vbeln}" text="{Auart}" />
+                </suggestionItems> -->
+            </Input>
+            <Label text="Input WIth Suggestion" />
+            <Input id="idSuggInput" tooltip="Input Tooltip" showSuggestion="true" suggestionItems="{/Cities}">
+                <suggestionItems>
+                    <core:ListItem text="{Bezei}" additionalText="{Auart}" />
+                </suggestionItems>
+            </Input>
+            <Select id="idSelect" items="{/Cities}" change="onSelected">
+                <items>
+                    <core:Item key="{Auart}" text="{Bezei}" />
+                </items>
+            </Select>
+            <Select id="idSelect1" change="onSelected">
+                <items>
+                    <core:Item key="{Auart}" text="{Bezei}" />
+                </items>
+            </Select>
+            <!-- <table:Table id="Table" selectionMode="Single" rows="{/header}">
+                <table:footer>
+                    <Toolbar>
+                        <content>
+                            <Button text="Add" press="onTableAdd" />
+                            <Button text="Delete" press="onTableDelete" />
+                            <Button text="Change" press="onTableChange" />
+                            <Button text="Show Sales Org" press="onTableSalesOrg" />
+                        </content>
+                    </Toolbar>
+                </table:footer>
+                <table:columns>
+                    <table:Column>
+                        <table:label>
+                            <Text text="SalesOrg" />
+                        </table:label>
+                        <table:template>
+                            <Text text="{Auart}" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column>
+                        <table:label>
+                            <Text text="SalesOrg" />
+                        </table:label>
+                        <table:template>
+                            <Input value="{Vbeln}">
+                                <suggestionColumns />
+                                <suggestionItems />
+                                <suggestionRows />
+                            </Input>
+                        </table:template>
+                    </table:Column>
+                    <table:Column>
+                        <table:label>
+                            <Text text="Delete Row" />
+                        </table:label>
+                        <table:template>
+                            <Button text="Delete" />
+                        </table:template>
+                    </table:Column>
+                </table:columns>
+            </table:Table> -->
+
+            <!-- <Button text="Create UI" press="CreateUI" />
+            <Toolbar id="idToolbar">
+                <content>
+                    <Text text="Dynamic UI" />
+                </content>
+            </Toolbar> -->
+
+            <!-- <Button text="Navigate" press="onNav" /> -->
+        </content>
+    </Page>
+</mvc:View>

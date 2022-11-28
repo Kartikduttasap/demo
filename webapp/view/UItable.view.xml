@@ -1,0 +1,96 @@
+<mvc:View controllerName="ns.demo.controller.UItable" xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Shell>
+        <app>
+            <Page title="SAP UI Table" showNavButton="true" navButtonPress="onBack">
+                <content>
+                    <table:Table id="Table" selectionMode="Single" rows="{/fruits}">
+                        <table:footer>
+                            <Toolbar>
+                                <content>
+                                    <Button text="Read Row" press="onTableAdd" width="10%" />
+                                    <Button text="Append Row" press="onTableAdd" width="10%" />
+                                    <Button text="Insert Row" press="onTableAdd" width="10%" />
+                                    <Button text="Delete Row" press="onTableDelete" width="10%" />
+                                    <Button text="Add Column" press="onTableSalesOrg" width="10%" />
+                                    <Button text="Delete Column" press="onTableSalesOrg" width="10%" />
+                                    <Button text="Editable" press="onTableSalesOrg" width="10%" />
+                                    <Button text="Change Property" press="onTableChange" />
+                                </content>
+                            </Toolbar>
+                        </table:footer>
+                        <table:columns>
+                            <table:Column>
+                                <table:label>
+                                    <Text text="Image" />
+                                </table:label>
+                                <table:template>
+                                    <Image src="{imageURL}" height="10%" width="10%" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column>
+                                <table:label>
+                                    <Text text="Name" />
+                                </table:label>
+                                <table:template>
+                                    <Text text="{name}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column>
+                                <table:label>
+                                    <Text text="Type" />
+                                </table:label>
+                                <table:template>
+                                    <Text text="{type}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column>
+                                <table:label>
+                                    <Text text="Price" />
+                                </table:label>
+                                <table:template>
+                                    <Text text="{price}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column>
+                                <table:label>
+                                    <Text text="Currency" />
+                                </table:label>
+                                <table:template>
+                                    <Text text="{currency}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column>
+                                <table:label>
+                                    <Text text="Status" />
+                                </table:label>
+                                <table:template>
+                                    <Text text="{status}" />
+                                </table:template>
+                            </table:Column>
+                        </table:columns>
+                    </table:Table>
+                    <f:SimpleForm id="idForm" title="Work Area" layout="ColumnLayout">
+                        <f:content>
+                            <Label text="Name" />
+                            <Input value="{name}" />
+                            <Label text="Type" />
+                            <Input value="{type}" />
+                            <Label text="Price" />
+                            <Input value="{price}" description="{currency}" />
+                            <Label text="Status" />
+                            <Select name="{status}" selectedKey="{status}">
+                                <items>
+                                    <c:ListItem key=" " text="" icon="" />
+                                    <c:ListItem key="Available" text="Available" icon="" />
+                                    <c:ListItem key="Unavailable" text="Unavailable" icon="" />
+                                    <c:ListItem key="Discontinued" text="Discontinued" icon="" />
+                                    <c:ListItem key="Out of Stock" text="Out of Stock" icon="" />
+                                </items>
+                            </Select>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Page>
+        </app>
+    </Shell>
+</mvc:View>
